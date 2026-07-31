@@ -43,20 +43,27 @@ public class Library
     }
 
     /**
-     * This is the finder method for books
+     * This method finds a book object using its id
+     * @param int id of the book
+     * @return Book found 
      */
-    public Book findBook(String title)
+    public Book findBookById(int id)
     {
         Book foundBook = null;
-        int titleId = getId(title);
-
         for (Book book : books)
         {
-
+            if (book.getId() == id)
+            {
+                foundBook = book;
+            }
         }
-
-        return foundBook;
+        if (foundBook == null)
+        {
+            System.out.println("Book not found!");
+        }
+        return foundBook;  
     }
+
 
 
 
