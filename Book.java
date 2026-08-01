@@ -19,7 +19,7 @@ public abstract class Book
     private int id; // default 0
     private final String title;
     private final String author;
-    private Boolean available;
+    private boolean available;
 
     public Book(String title, String author)
     {
@@ -39,6 +39,24 @@ public abstract class Book
     {
         return id;
     }
+
+    /**
+     * This is the getter method for title
+     */
+    public String getTitle()
+    {
+        return title;
+    }
+
+    /**
+     * This is the getter method for author
+     */
+    public String getAuthor()
+    {
+        return author;
+    }
+
+
 
     /**
      * This is the borrow method for the book
@@ -70,38 +88,18 @@ public abstract class Book
 
     /**
      * This is the abstract method for books 
-     * @param title
+     *
      * @return
      */
-    public abstract int getLoanPeriod(String title);
+    public abstract int getLoanPeriod();
 
-
-        /**
-     * This is a helper method used to get the book title
-     * @param int id
-     * @return String title
-     */
-    public String findTitleById(int id)
-    {
-        return title; 
-    }
-
-    /**
-     * This is a helper method used to get the author of a book using id
-     * @param int id
-     * @return String author of the book
-     */
-    public String getAuthorById(int id)
-    {
-        return author;
-    }
 
     /**
      * This method checks availablility
-     * @param String title of the book
+     * 
      * @return Boolean true or false check for availability
      */
-    public Boolean isAvailable(String title)
+    public Boolean isAvailable()
     {
         return available;
     }
