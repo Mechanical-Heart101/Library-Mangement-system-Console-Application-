@@ -53,5 +53,54 @@ public class Member
         return borrowedBooks;
     }
 
+    /**
+     * This is the addBorrowedBook method. adds a book to the list of borrowed books
+     * @param Book Borrowed book
+     */
+    public void addBorrowedBook(Book book)
+    {
+        borrowedBooks.add(book);
+    }
+
+    /**
+     * This is the remove borrowed book method
+     * @param Book book
+     */
+    public void removeBorrowedBook(Book book)
+    {
+        borrowedBooks.remove(book);
+    }
+
+    /**
+     * This is the getter method for the borrowed books list
+     * @return ArrayList of borroed book objects
+     */
+    public ArrayList<Book> getBorrowedBooks()
+    {
+        return borrowedBooks;
+    }
+
+    /**
+     * This is the display borrowed books method wjich displays the list.
+     */
+    public void displayBorroewdBooks()
+    {
+        for (Book book : getBorrowedBooks())
+        {
+            book.displayBook();
+        }
+    }
+
+    /**
+     * This is the tostring method fot the member class
+     * @return String toString
+     */
+    @Override
+    public String toString()
+    {
+        return "Name: " + name + " Id: " + memberId;
+    }
+
+
 
 }

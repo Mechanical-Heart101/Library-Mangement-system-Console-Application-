@@ -74,6 +74,7 @@ public abstract class Book
         available = true;
     }
 
+
     /**
      * This is the display info method for the book objects
      * This method prints out the characteristics of the book
@@ -102,6 +103,17 @@ public abstract class Book
     public Boolean isAvailable()
     {
         return available;
+    }
+
+    /**
+     * This is the toString method for the Book class
+     * @return String toString 
+     */
+    @Override
+    public String toString()
+    {
+        return "Title: "+ title + " Author: "+ author
+            + " Id: " + id + " Available: " + available;
     }
 
 }

@@ -47,6 +47,7 @@ public class Library
         if (findBookById(newBookId) == null)
         {
             books.add(newBook);
+            System.out.println("Book successfully added.");
         }
         else
         {
@@ -68,6 +69,7 @@ public class Library
         if (findBookById(EBookId) == null)
         {
             books.add(newEBook);
+            System.out.println("EBook successfully added.");
         }
         else
         {
@@ -89,6 +91,7 @@ public class Library
         if (findMemberById(memberId) == null)
         {
             members.add(newMember);
+            System.out.println("New member successfully added!");
         }
         else
         {
@@ -179,6 +182,55 @@ public class Library
         }
     }
 
+    /**
+     * This is the library classes display method for books to enable display function in the console
+     */
+    public void displayBooks()
+    {
+        for (Book book : books)
+        {
+            System.out.println(book);
+        }
+    }
+
+    /**
+     * This is the display member method for the library class
+     */
+    public void displayMembers()
+    {
+        for (Member member : members)
+        {
+            System.out.println(member);
+        }
+    }
+
+    /**
+     * This is the method for borrowing books
+     * @param int book id
+     * @param int member id
+     */
+    public void borrowLibraryBook(int id, int memberId)
+    {
+        Book bookToBorrow = findBookById(id); // find the book
+        Member borrowingMember = findMemberById(memberId); // find the member
+
+        borrowingMember.addBorrowedBook(bookToBorrow); 
+        bookToBorrow.borrowBook(); // sets book availablilty to false
+    }
+
+    /**
+     * This is the method for returning books
+     * @param int book Id
+     * @param int memberId
+     */
+    public void returnLibraryBook(int id, int memberId)
+    {
+        Book bookToReturn = findBookById(id);
+        Member memberReturning = findMemberById(memberId);
+
+        memberReturning.removeBorrowedBook(bookToReturn); // removes book from the members borrowed list
+        bookToReturn.returnBook(); // sets availability to true
+    }
 
 
 
